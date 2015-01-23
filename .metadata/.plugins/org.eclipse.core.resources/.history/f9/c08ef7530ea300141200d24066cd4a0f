@@ -1,0 +1,33 @@
+package lab3;
+
+public class Money {
+	private int fAmount;
+	private String fCurrency;
+	
+	public Money(int amount, String currency){
+		this.fAmount = amount;
+		this.fCurrency = currency;
+	}
+	
+	public int amount() {
+		return this.fAmount;
+	}
+	
+	public String currency() {
+		return fCurrency;
+	}
+	
+	public Money add(Money m) throws Exception {
+		if (this.currency() == m.currency())
+			return new Money(this.amount()+m.amount(), this.currency());
+		throw new Exception("Cannot add different currency togethor.");
+	}
+	
+	public boolean equals(Object anObject) {
+		if(anObject instanceof Money) {
+			Money aMoney = (Money)anObject;
+			return aMoney.currency().equals(this.currency()) && aMoney.amount() == this.amount();
+		}
+		return false;
+	}
+}

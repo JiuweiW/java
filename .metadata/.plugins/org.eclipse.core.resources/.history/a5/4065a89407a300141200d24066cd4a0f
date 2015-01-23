@@ -1,0 +1,11 @@
+package lab3;
+
+public class Money {
+	private int fAmount;
+	private String fCurrency;
+	
+	public Money(int amount, String currency){
+		fAmount = amount;
+		fCurrency = currency;
+	}
+}

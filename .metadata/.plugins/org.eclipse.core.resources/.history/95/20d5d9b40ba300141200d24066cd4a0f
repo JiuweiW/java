@@ -1,0 +1,46 @@
+package lab3;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MoneyTest {
+	
+	private Money f12CAD;
+	private Money f14CAD;
+	
+	@Before
+	public void setup() throws Exception {
+		f12CAD = new Money(12, "CAD");
+		f14CAD = new Money(14, "CAD");
+	}
+
+	@Test
+	public void testMoney() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAmount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCurrency() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAdd() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testEqualsObject() {
+		assertTrue(!f12CAD.equals(null));
+		assertEquals(f12CAD, new Money(12, "CAD"));
+		assertEquals(f12CAD, f12CAD);
+		assertTrue(!f12CAD.equals(f14CAD))
+	}
+
+}
