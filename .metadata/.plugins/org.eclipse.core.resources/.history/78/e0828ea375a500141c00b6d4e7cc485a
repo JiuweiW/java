@@ -1,0 +1,37 @@
+package lab3;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class VarianceAccumulatorTest {
+
+	@Test
+	public void test() {
+		int n = 100;
+		VarianceAccumulator a = new VarianceAccumulator();
+		double[] v = new double[n];
+		double total = 0;
+		
+		for (int i = 0; i < n; i++) {
+			double x = StdRandom.uniform();
+			v[i] = x;
+			total += x;
+			a.addDataValue(x);
+		}
+		
+		double mean = total / n;
+		double s = 0;
+		
+		for (int i = 0; i < n; i++) {
+			double d = v[i] - mean;
+			s += d * d;
+		}
+		
+		double stddev = Math.sqrt(s / (n-1));
+		
+		assertEquals(mean, a.mean(), 1e-10);
+		assertEquals(stddev, a.stddev(), 1e-10);
+	}
+
+}

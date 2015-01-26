@@ -1,0 +1,12 @@
+package lab3;
+
+public class Stack {
+	
+	
+	
+	
+	public static void main(String[] args) {
+		System.out.println("BLAH!");
+	}
+
+}
