@@ -1,0 +1,3 @@
+16,insertion sort,0.001,comparable insertion sort,0.0,merge sort,0.001,heap sort,0.001,comparable binary insertion sort,0.0
+256,insertion sort,0.003,comparable insertion sort,0.003,merge sort,0.0,heap sort,0.001,comparable binary insertion sort,0.002
+4096,insertion sort,0.049,comparable insertion sort,0.082,merge sort,0.007,heap sort,0.005,comparable binary insertion sort,0.066

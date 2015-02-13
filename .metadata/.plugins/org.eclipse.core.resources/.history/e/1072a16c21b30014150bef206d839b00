@@ -1,0 +1,29 @@
+package sort;
+
+public class Heap {
+	/**
+	 * heap sort using Comparable
+	 * @param x - the input array containing scores of words that need to be sorted.
+	 */
+	public static void sortHeap ( Comparable[] x) {
+		int N = x.length;
+		for (int k=N/2; k>=1; k--)
+			sink(x, k, N);
+		while (N > 1) {
+			swap(x, 1, N--);
+			sink(x, 1, N)
+		}
+	}
+	
+	private static void sink(Comparable[] x, int k, int N) {
+		while (2*k <= N) {
+			int j = 2*k;
+			if (j < N && less(x, j, j+1))
+				j++;
+			if (!less(x, k, j))
+				break;
+			swap(x, k, j);
+			k = j;
+		}
+	}
+}
