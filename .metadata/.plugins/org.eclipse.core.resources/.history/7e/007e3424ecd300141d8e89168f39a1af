@@ -1,0 +1,8 @@
+
+public class BreadthFirstPaths {
+	
+	private boolean[] marked;
+	private int[] edgeTo;
+	private final int s;
+
+}

@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Queue;
 
 public class BST<Key extends Comparable<Key>, Value>{
 	
@@ -17,6 +19,10 @@ public class BST<Key extends Comparable<Key>, Value>{
 		}
 	}
 	
+    public boolean contains(Key key) {
+        return get(key) != null;
+    }
+    
 	public int size () {
 		return size(root);
 	}
@@ -52,12 +58,10 @@ public class BST<Key extends Comparable<Key>, Value>{
 		if (x == null) 
 			return new Node(key, val, 1);
 		int cmp = key.compareTo(x.key);
-		if (cmp < 0)
+		if (cmp <= 0)
 			x.left = put(x.left, key, val);
 		else if (cmp > 0)
 			x.right = put(x.right, key, val);
-		else
-			x.val = val;
 		x.N = size(x.left) + size(x.right) + 1;
 		return x;
 	}
@@ -193,4 +197,34 @@ public class BST<Key extends Comparable<Key>, Value>{
 		x.N = size(x.left) + size(x.right) +1;
 		return x;
 	}
+	
+	public Iterable<Value> keys() {
+        return keys(min(), max());
+    }
+
+    public Iterable<Value> keys(Key lo, Key hi) {
+        ArrayList<Value> queue = new ArrayList<Value>();
+        keys(root, queue, lo, hi);
+        return queue;
+    } 
+
+    private void keys(Node x, ArrayList<Value> queue, Key lo, Key hi) { 
+        if (x == null) 
+        	return; 
+        int cmplo = lo.compareTo(x.key); 
+        int cmphi = hi.compareTo(x.key); 
+        if (cmplo < 0) 
+        	keys(x.left, queue, lo, hi); 
+        if (cmplo <= 0 && cmphi >= 0) 
+        	queue.add(x.val); 
+        if (cmphi > 0) 
+        	keys(x.right, queue, lo, hi); 
+    } 
+
+    public int size(Key lo, Key hi) {
+        if (lo.compareTo(hi) > 0) return 0;
+        if (contains(hi)) return rank(hi) - rank(lo) + 1;
+        else              return rank(hi) - rank(lo);
+    }
+
 }
