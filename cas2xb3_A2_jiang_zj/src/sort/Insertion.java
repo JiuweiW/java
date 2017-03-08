@@ -1,5 +1,12 @@
 package sort;
-
+/**The {@code Insertion} class provides static methods for sorting an
+ * array using insertion sort.
+ *  This implementation makes ~ 1/2 n^2 compares and exchanges in
+ *  the worst case, so it is not suitable for sorting large arbitrary arrays.
+ *  More precisely, the number of exchanges is exactly equal to the number
+ *  of inversions. So, for example, it sorts a partially-sorted array
+ *  in linear time.
+ */
 public class Insertion {
 	
 	/**
