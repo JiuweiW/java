@@ -22,14 +22,20 @@ public class SortTest {
 	// create a array of Strings to store the output
 	static String[] output = {"16", "256", "4096"};	
 	
-	// a method written to test if an array is empty, not used anymore
+	/**
+	 * Test the array x written to test is empty or not
+	 */
 	public boolean isEmpty(Word[] x) {
 		for (int i=0; i<x.length; i++) {
 			if (x[i] == null) return true;
 		}
 		return false;
 	}
-
+        /**
+	 * Read data from a2_in.txt 
+	 * Create word array use data from a2_in.txt 
+	 * @throws FileNotFoundException
+	 */
 	@Before
 	public void setup() throws FileNotFoundException {
 		// read input file and convert everything to array of Word
@@ -60,7 +66,12 @@ public class SortTest {
 //			System.out.println(isEmpty(inputWord[i]));
 		}
 	}
-	
+	/**
+         * Tests for Insertion class sort function.
+         * Array size are 2^4, 2^8, 2^12
+         * Use StopWatch class to record times for sort.
+         * Add the result to output string
+         */
 	@Test
 	public void testSortInsert() {
 		// using the StopWatch class from the apache library
@@ -82,7 +93,12 @@ public class SortTest {
 		}
 		sw.stop();
 	}
-	
+	/**
+         * Tests for Insertion class sortComparable function.
+         * Array size are 2^4, 2^8, 2^12
+         * Use StopWatch class to record times for sort.
+         * Add the result to output string
+         */
 	@Test
 	public void testInsertComparable() {
 		StopWatch sw = new StopWatch();
@@ -98,7 +114,12 @@ public class SortTest {
 		}
 		sw.stop();
 	}
-	
+	/**
+         * Tests for Insertion class sortBinary function.
+         * Array size are 2^4, 2^8, 2^12
+         * Use StopWatch class to record times for sort.
+         * Add the result to output string
+         */
 	@Test
 	public void testInsertBinary() {
 		StopWatch sw = new StopWatch();
@@ -114,7 +135,12 @@ public class SortTest {
 		}
 		sw.stop();
 	}
-		
+	/**
+         * Tests for Merge class sortMerge function.
+         * Array size are 2^4, 2^8, 2^12
+         * Use StopWatch class to record times for sort.
+         * Add the result to output string
+         */		
 	@Test
 	public void testMerge() {
 		StopWatch sw = new StopWatch();
@@ -130,7 +156,12 @@ public class SortTest {
 		}
 		sw.stop();
 	}
-	
+	/**
+         * Tests for Heap class sortHeap function.
+         * Array size are 2^4, 2^8, 2^12
+         * Use StopWatch class to record times for sort.
+         * Add the result to output string
+         */
 	@Test
 	public void testHeapSort() {
 		StopWatch sw = new StopWatch();
@@ -146,7 +177,10 @@ public class SortTest {
 		}
 		sw.stop();
 	}
-	
+	/**
+	 * Record run times for each sort function.
+	 * @throws FileNotFoundException
+	 */
 	@AfterClass
 	public static void output() throws FileNotFoundException {
 		// open output file
