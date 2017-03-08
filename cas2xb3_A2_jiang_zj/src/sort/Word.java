@@ -1,5 +1,7 @@
 package sort;
-
+/**
+ * The @code Word class is an abstract data type called word that implements the Comparable interface.
+ */
 public class Word implements Comparable<Word>{
 	private String word;
 	private int score;
