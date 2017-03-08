@@ -28,7 +28,7 @@ public class Insertion {
 	}
 	
 	/**
-         * Exchange x[a] and x[b]
+         * Exchange x[a] and x[b].
          * @param x - the input array containing times of words that need to be sorted.
          * @param a - the index of the first element for the array a to be exchanged.
          * @param b - the index of the second element for the array a to be exchanged.
@@ -106,7 +106,7 @@ public class Insertion {
 		}
 	}
     /**
-     * Tests for insertion sort
+     * Tests for insertion sort.
      *  @param args the command-line arguments
      */
     public static void main(String[] args){
