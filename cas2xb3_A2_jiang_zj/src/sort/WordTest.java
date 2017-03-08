@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ *The {@code WordTest} class provides JUnit tests for word class
+ */
 public class WordTest {
 	private Word a;
 	private Word b;
