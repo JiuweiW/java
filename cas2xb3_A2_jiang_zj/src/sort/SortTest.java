@@ -15,7 +15,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+/**
+ *The {@code SortTest} class provides JUnit tests for test sort
+ */
 public class SortTest {
 	// create a 2d array to store all the words
 	private Word[][] inputWord = {new Word[16], new Word[256], new Word[4096]};
