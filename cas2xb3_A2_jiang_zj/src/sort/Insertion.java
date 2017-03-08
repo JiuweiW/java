@@ -2,27 +2,49 @@ package sort;
 
 public class Insertion {
 	
-	// compare two Word's, if a has a higher rank than b
+	/**
+	 * Compares two words a and b.
+	 * @param a - the first word to be compared
+	 * @param b - the second word to be compared
+	 * @return {@code true} if word a has bigger score than b;
+         *         {@code false} otherwise
+	 */
 	private static boolean higher(Word a, Word b) {
 		if (a.getScore() > b.getScore())
 			return true;
 		return false;
 	}
-	
+	/**
+	 * Compares two comparable object a and b.
+	 * @param a - the first comparable to be compared
+	 * @param b - the second comparable to be compared
+	 * @return {@code true} if comparable a has bigger score than b;
+         *         {@code false} otherwise
+	 */
 	private static boolean higher(Comparable a, Comparable b) {
 		if (((Word) a).getScore() >= ((Word) b).getScore())
 			return true;
 		return false;
 	}
 	
-	// exchange two Wrod's in an array
+	/**
+         * Exchange x[a] and x[b]
+         * @param x - the input array containing times of words that need to be sorted.
+         * @param a - the index of the first element for the array a to be exchanged.
+         * @param b - the index of the second element for the array a to be exchanged.
+         */
 	private static void swap(Comparable[] x, int a, int b) {
 		Comparable t = x[a];
 		x[a] = x[b];
 		x[b] = t;
 	}
 	
-	// check if the array is sorted
+	/**
+	 * Check if array is sorted - useful for debugging.
+	 * @param x - the array for sort
+	 * @return {@code true} if array a is sorted;
+         *         {@code false} otherwise
+	 */
 	public static boolean isSorted(Word[] x) {
 		for (int i=0; i<x.length-1; i++) {
 			if ((x[i].compareTo(x[i+1]) < 0))
@@ -62,6 +84,7 @@ public class Insertion {
 
 	/**
 	 * optimized insertion sort
+	 * Sorting an array using an optimized binary insertion sort with half exchanges
 	 * @param x - the input array containing scores of words that need to be sorted.
 	 */
 	public static void sortBinary ( Comparable[] x) {
@@ -82,7 +105,10 @@ public class Insertion {
 			}
 		}
 	}
-	
+    /**
+     * Tests for insertion sort
+     *  @param args the command-line arguments
+     */
     public static void main(String[] args){
         Comparable a[]=new Comparable[]{12,10,34,23,9,7,8,5,6};
         sortBinary(a);
