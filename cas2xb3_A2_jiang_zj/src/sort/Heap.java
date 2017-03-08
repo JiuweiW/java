@@ -2,7 +2,7 @@ package sort;
 
 public class Heap {
 	/**
-	 * Heap sort using comparable object
+	 * Heap sort using comparable object.
 	 * @param x - the input array containing scores of words that need to be sorted.
 	 */
 	public static void sortHeap ( Comparable[] x) {
