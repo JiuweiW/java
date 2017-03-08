@@ -1,5 +1,6 @@
 package sort;
-
+/**The {@code Heap} class provides a static methods for heap sort
+ */
 public class Heap {
 	/**
 	 * Heap sort using comparable object.
