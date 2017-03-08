@@ -1,5 +1,7 @@
 package sort;
-
+/**The {@code Merge} class provides static methods for sorting an
+ * array using merge sort.
+ */
 public class Merge {
 	
 	// the auxiliary array for merges
@@ -23,8 +25,10 @@ public class Merge {
 	private static void merge(Comparable[] a, int lo, int mid, int hi) {
 		// merge a[lo..mid] with a[mid+1..hi]
 		int i = lo, j = mid+1;
+		// copy to aux[]
 		for (int k=lo; k<=hi; k++)
 			aux[k] = a[k];
+		// merge back to a[]
 		for (int k=lo; k<=hi; k++) {
 			if (i > mid)
 				a[k] = aux[j++];
